@@ -1,0 +1,34 @@
+﻿@using ProductsPL.Models
+@model IEnumerable<ProductsPL.Models.ProductPO>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2 align="center">Northwind Master Product List</h2>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity Per Unit</th>
+            <th>Price Per Unit</th>
+            <th>Amount of Product In Stock</th>
+            <th>Amount of Product On Order</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>@data.ProductName </td>
+                <td>@data.QuantityPerUnit </td>
+                <td>@data.UnitPrice </td>
+                <td>@data.UnitsInStock </td>
+                <td>@data.UnitsOnOrder</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
